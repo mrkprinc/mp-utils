@@ -1,7 +1,7 @@
 import sys
 import os
 
-def functional_component(args):
+def functional_component(args, _options):
   assert args, 'This tool needs args.'
 
   name = args[0].capitalize()

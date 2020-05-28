@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 import sys
+import argparse
 import redux_constants
 import functional_component
 
-def mp_utils(cli_args):
-  tool, args = cli_args[0], cli_args[1:]
-
-  return {
-    'redux-const': redux_constants.default,
-    'component': functional_component.default
-  }.get(tool, unknown_tool)(args)
+tools = {
+  'redux-const': redux_constants.default,
+  'component': functional_component.default
+}
 
 def unknown_tool(_args):
   raise AssertionError('This tool is not in my box :(')
 
+p = argparse.ArgumentParser()
+p.add_argument('tool')
+p.add_argument('--scss', action="store_true")
+options, pass_args = p.parse_known_args()
+
 try:
-  assert len(sys.argv) > 1, 'Which MP tool do you want?'
-  mp_utils(sys.argv[1:])
+  tools.get(options.tool, unknown_tool)(pass_args, options)
 except AssertionError as e:
   print('Whoops! {}'.format(e))
