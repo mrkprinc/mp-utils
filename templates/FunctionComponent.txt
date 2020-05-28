@@ -1,4 +1,4 @@
-import styles from './{name}.module.scss'
+{imports}
 
 interface IProps {{
 

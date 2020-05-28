@@ -15,9 +15,9 @@ def unknown_tool(_args):
 p = argparse.ArgumentParser()
 p.add_argument('tool')
 p.add_argument('--scss', action="store_true")
-options, pass_args = p.parse_known_args()
+args, pass_args = p.parse_known_args()
 
 try:
-  tools.get(options.tool, unknown_tool)(pass_args, options)
+  tools.get(args.tool, unknown_tool)(pass_args)
 except AssertionError as e:
   print('Whoops! {}'.format(e))
