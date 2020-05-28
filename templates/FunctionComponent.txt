@@ -1,0 +1,11 @@
+import styles from './{name}.module.scss'
+
+interface IProps {{
+
+}}
+
+const {name}: React.FunctionComponent<IProps> = (props) => {{
+  return <div>{name} Component</div>
+}}
+
+export default {name}

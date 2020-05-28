@@ -2,12 +2,10 @@ def redux_constants(args):
   assert args, 'This tool needs args.'
 
   base = '_'.join(args).upper()
-  constants = """
-{0} = '{0}',
-{0}{1} = '{0}{1}',
-{0}{2} = '{0}{2}',
-{0}{3} = '{0}{3}',
-
+  constants = """{0} = '{0}',
+  {0}{1} = '{0}{1}',
+  {0}{2} = '{0}{2}',
+  {0}{3} = '{0}{3}',
 """.format(base, '_PENDING', '_FULFILLED', '_REJECTED')
   print(constants)
 

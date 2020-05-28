@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 import sys
 import redux_constants
+import functional_component
 
 def mp_utils(cli_args):
   tool, args = cli_args[0], cli_args[1:]
 
   return {
-    'redux-constants': redux_constants.default,
+    'redux-const': redux_constants.default,
+    'component': functional_component.default
   }.get(tool, unknown_tool)(args)
 
 def unknown_tool(_args):
