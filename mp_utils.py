@@ -14,7 +14,6 @@ def unknown_tool(_args):
 
 p = argparse.ArgumentParser()
 p.add_argument('tool')
-p.add_argument('--scss', action="store_true")
 args, pass_args = p.parse_known_args()
 
 try:

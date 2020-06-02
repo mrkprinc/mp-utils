@@ -1,4 +1,4 @@
-def redux_constants(args, _options):
+def redux_constants(args):
   assert args, 'This tool needs args.'
 
   base = '_'.join(args).upper()
